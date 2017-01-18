@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="PersonDao">
+	
+	<resultMap type="com.my.test.mybatis.model.Person" id="PersonMap">
+		<result property="id" column="uid" />
+		<result property="name" column="username" />
+		<result property="createdTime" column="created_time" />
+	</resultMap>
+	
+	<select id="getAllPersons" resultMap="PersonMap">
+		<![CDATA[
+		select uid, username, created_time from chushou_user_profile order by uid desc limit 10
+		]]>
+	</select>
+	
+	<select id="getPersonById" parameterType="int" resultMap="PersonMap">
+		<![CDATA[
+		select uid, username, created_time from chushou_user_profile where uid = #{id}
+		]]>
+	</select>
+	
+</mapper>
