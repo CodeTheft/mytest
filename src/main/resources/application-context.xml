@@ -2,8 +2,11 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
 	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mongo="http://www.springframework.org/schema/data/mongo"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
   http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+  http://www.springframework.org/schema/data/mongo
+  http://www.springframework.org/schema/data/mongo/spring-mongo.xsd
   http://www.springframework.org/schema/aop 
   http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
   http://www.springframework.org/schema/context
@@ -13,8 +16,16 @@
 
 	<context:annotation-config />
 
-	<context:component-scan base-package="com.my.test.mybatis" />
-
+	<context:component-scan base-package="com.my.test" />
+	
+	<!-- mongo的xml配置 -->
+	<mongo:repositories base-package="com.my.test.mongo" />
+	<mongo:mongo />
+	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+		<constructor-arg ref="mongo" />
+		<constructor-arg name="databaseName" value="mymongo" />
+	</bean>
+	
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="${jdbc.driverClassName}" />
