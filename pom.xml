@@ -61,15 +61,11 @@
 			<artifactId>spring-jdbc</artifactId>
 			<version>4.3.7.RELEASE</version>
 		</dependency>
+		<!-- Gson -->
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
 			<version>2.3.1</version>
-		</dependency>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.12</version>
 		</dependency>
 		<!-- kafka -->
 		<dependency>
@@ -78,7 +74,7 @@
 			<version>0.8.2.1</version>
 		</dependency>
 		<!-- lucene -->
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.apache.lucene</groupId>
 			<artifactId>lucene-core</artifactId>
 			<version>6.3.0</version>
@@ -97,7 +93,7 @@
 			<groupId>org.apache.lucene</groupId>
 			<artifactId>lucene-demo</artifactId>
 			<version>6.3.0</version>
-		</dependency>
+		</dependency> -->
 		<!-- rabbitmq -->
 		<dependency>
 			<groupId>com.rabbitmq</groupId>
@@ -113,6 +109,43 @@
 			<groupId>net.sf.ehcache</groupId>
 			<artifactId>ehcache-core</artifactId>
 			<version>2.6.11</version>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba.citrus</groupId>
+			<artifactId>citrus-webx-all</artifactId>
+			<version>3.1.6</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.velocity</groupId>
+			<artifactId>velocity</artifactId>
+			<version>1.7</version>
+		</dependency>
+		<!-- elasticsearch -->
+		<dependency>
+			<groupId>org.elasticsearch</groupId>
+			<artifactId>elasticsearch</artifactId>
+			<version>5.6.3</version>
+		</dependency>
+		<dependency>
+            <groupId>org.elasticsearch.client</groupId>
+            <artifactId>transport</artifactId>
+            <version>5.6.3</version>
+        </dependency>
+		<!-- jackson -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.9.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.9.2</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
 		</dependency>
 	</dependencies>
 
